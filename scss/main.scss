@@ -1,0 +1,91 @@
+@import 'imports/variavies' , 'imports/mixins' , 'imports/reset' ;
+.header{
+  width: 100%;
+  background-color:#393939;
+  color: #fff;
+  padding:1em;
+
+  display: flex;
+  flex-flow: row wrap;
+  justify-content:space-between;
+  align-items: center;
+}
+.header .h1{
+
+}
+.header .a{}
+
+.header .button{
+
+
+  display: none;
+  cursor: pointer;
+}
+.header .svg{
+  width: 2em;
+  height: 2em;
+  fill: white;
+}
+
+
+.header .nav{
+
+}
+.header .ul{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content:flex-end;
+  align-items: center;
+}
+.header .li{
+  margin: 0 0.5em;
+}
+
+@media screen and (max-width:480px){
+  .header .button{
+  
+    display: block;
+  }
+  .header .nav{/*quando o botão não estiver ativo */
+    width: 100%;
+   /* display: none;*/
+   overflow: hidden;
+  
+   pointer-events: none;/*para não ter efeito no mouse*/
+   height: 0vh;
+   transition: all .5s ease-in-out;
+   display:flex;
+   flex-flow: column nowrap;
+   justify-content:center;
+   align-items: center;
+  }
+  .header .nav.activo{/*quando o botão estiver ativo */
+    /*para suavizar o efeito apenas retirei a altura e depois adicionei com um transition */
+    /*display: block;*/
+    height: 50vh;
+    pointer-events: auto;
+  }
+  .header .ul{
+    flex-direction: column;
+  }
+  .header .li{
+    margin: 1em 0;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
